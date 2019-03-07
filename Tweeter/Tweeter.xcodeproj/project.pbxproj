@@ -24,6 +24,19 @@
 		C58E8FE12230080D0022B304 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE02230080D0022B304 /* BaseUIView.swift */; };
 		C58E8FE5223009060022B304 /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */; };
 		C58E8FE82230099A0022B304 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE72230099A0022B304 /* BaseXibView.swift */; };
+		C5B0D276223147B200841224 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D274223147B200841224 /* MessageTableViewCell.swift */; };
+		C5B0D277223147B200841224 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B0D275223147B200841224 /* MessageTableViewCell.xib */; };
+		C5B0D279223147EC00841224 /* MessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D278223147EC00841224 /* MessageCellViewModel.swift */; };
+		C5B0D27B2231481A00841224 /* InputMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D27A2231481A00841224 /* InputMessageView.swift */; };
+		C5B0D27D2231483300841224 /* InputMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B0D27C2231483300841224 /* InputMessageView.xib */; };
+		C5B0D28022315A0300841224 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D27F22315A0300841224 /* AppConfig.swift */; };
+		C5B0D28322315BBA00841224 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28222315BBA00841224 /* Theme.swift */; };
+		C5B0D28522315BCC00841224 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28422315BCC00841224 /* Dimension.swift */; };
+		C5B0D2872231713500841224 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D2862231713500841224 /* UIView+Extension.swift */; };
+		C5B0D28B2231741F00841224 /* TextBubbleLayoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28A2231741F00841224 /* TextBubbleLayoutModel.swift */; };
+		C5B0D28D2231754700841224 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */; };
+		C5B0D2902231782C00841224 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28F2231782C00841224 /* CGSize+Extension.swift */; };
+		C5B0D2922231796A00841224 /* TextBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D2912231796A00841224 /* TextBubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +80,19 @@
 		C58E8FE02230080D0022B304 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
 		C58E8FE72230099A0022B304 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
+		C5B0D274223147B200841224 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		C5B0D275223147B200841224 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		C5B0D278223147EC00841224 /* MessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModel.swift; sourceTree = "<group>"; };
+		C5B0D27A2231481A00841224 /* InputMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMessageView.swift; sourceTree = "<group>"; };
+		C5B0D27C2231483300841224 /* InputMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputMessageView.xib; sourceTree = "<group>"; };
+		C5B0D27F22315A0300841224 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		C5B0D28222315BBA00841224 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C5B0D28422315BCC00841224 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		C5B0D2862231713500841224 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C5B0D28A2231741F00841224 /* TextBubbleLayoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubbleLayoutModel.swift; sourceTree = "<group>"; };
+		C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		C5B0D28F2231782C00841224 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
+		C5B0D2912231796A00841224 /* TextBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				C58E8FC4223002290022B304 /* Resources */,
-				C58E8FC5223002580022B304 /* Common */,
+				C58E8FC5223002580022B304 /* Commons */,
+				C5B0D2732231476B00841224 /* Storyboards */,
 				C58E8FC92230027C0022B304 /* Features */,
 			);
 			path = Tweeter;
@@ -147,30 +174,31 @@
 			children = (
 				C58E8FA2223002230022B304 /* Info.plist */,
 				C58E8F9D223002230022B304 /* Assets.xcassets */,
-				C58E8F9A223002230022B304 /* Main.storyboard */,
-				C58E8F9F223002230022B304 /* LaunchScreen.storyboard */,
 				C58E8F96223002230022B304 /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C58E8FC5223002580022B304 /* Common */ = {
+		C58E8FC5223002580022B304 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				C58E8FC62230025E0022B304 /* Extension */,
-				C58E8FD3223002F80022B304 /* Protocol */,
-				C58E8FD2223002EB0022B304 /* Base */,
+				C5B0D28122315BAC00841224 /* Styles */,
+				C58E8FC62230025E0022B304 /* Extensions */,
+				C58E8FD3223002F80022B304 /* Protocols */,
+				C58E8FD2223002EB0022B304 /* Bases */,
+				C5B0D27F22315A0300841224 /* AppConfig.swift */,
 			);
-			path = Common;
+			path = Commons;
 			sourceTree = "<group>";
 		};
-		C58E8FC62230025E0022B304 /* Extension */ = {
+		C58E8FC62230025E0022B304 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C5B0D28E2231781B00841224 /* CoreGraphics */,
 				C58E8FC8223002750022B304 /* UIKit */,
 				C58E8FC72230026B0022B304 /* Foundation */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C58E8FC72230026B0022B304 /* Foundation */ = {
@@ -187,6 +215,8 @@
 			children = (
 				C58E8FD8223004A00022B304 /* UIApllication+Extension.swift */,
 				C58E8FDA223005650022B304 /* UITableView+Extension.swift */,
+				C5B0D2862231713500841224 /* UIView+Extension.swift */,
+				C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -204,19 +234,20 @@
 			children = (
 				C58E8FD1223002D60022B304 /* ViewModel */,
 				C58E8FD0223002CC0022B304 /* Model */,
-				C58E8FCF223002C70022B304 /* View */,
+				C58E8FCF223002C70022B304 /* Views */,
 			);
 			path = Message;
 			sourceTree = "<group>";
 		};
-		C58E8FCF223002C70022B304 /* View */ = {
+		C58E8FCF223002C70022B304 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5B0D2892231740800841224 /* TextBubbleView */,
 				C58E8FEA223009C40022B304 /* InputMessageView */,
 				C58E8FE9223009B80022B304 /* MessageTableViewCell */,
 				C58E8F98223002230022B304 /* MessageViewController.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C58E8FD0223002CC0022B304 /* Model */ = {
@@ -235,35 +266,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C58E8FD2223002EB0022B304 /* Base */ = {
+		C58E8FD2223002EB0022B304 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
-				C58E8FE62230094D0022B304 /* View */,
+				C5B0D27E2231486F00841224 /* CustomViews */,
+				C58E8FE62230094D0022B304 /* Views */,
 			);
-			path = Base;
+			path = Bases;
 			sourceTree = "<group>";
 		};
-		C58E8FD3223002F80022B304 /* Protocol */ = {
+		C58E8FD3223002F80022B304 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				C58E8FDC2230064A0022B304 /* Reusable.swift */,
 			);
-			path = Protocol;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
-		C58E8FE62230094D0022B304 /* View */ = {
+		C58E8FE62230094D0022B304 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C58E8FE02230080D0022B304 /* BaseUIView.swift */,
-				C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */,
 				C58E8FE72230099A0022B304 /* BaseXibView.swift */,
+				C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C58E8FE9223009B80022B304 /* MessageTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C5B0D278223147EC00841224 /* MessageCellViewModel.swift */,
+				C5B0D274223147B200841224 /* MessageTableViewCell.swift */,
+				C5B0D275223147B200841224 /* MessageTableViewCell.xib */,
 			);
 			path = MessageTableViewCell;
 			sourceTree = "<group>";
@@ -271,8 +306,52 @@
 		C58E8FEA223009C40022B304 /* InputMessageView */ = {
 			isa = PBXGroup;
 			children = (
+				C5B0D27A2231481A00841224 /* InputMessageView.swift */,
+				C5B0D27C2231483300841224 /* InputMessageView.xib */,
 			);
 			path = InputMessageView;
+			sourceTree = "<group>";
+		};
+		C5B0D2732231476B00841224 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C58E8F9A223002230022B304 /* Main.storyboard */,
+				C58E8F9F223002230022B304 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5B0D27E2231486F00841224 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		C5B0D28122315BAC00841224 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				C5B0D28222315BBA00841224 /* Theme.swift */,
+				C5B0D28422315BCC00841224 /* Dimension.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		C5B0D2892231740800841224 /* TextBubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				C5B0D28A2231741F00841224 /* TextBubbleLayoutModel.swift */,
+				C5B0D2912231796A00841224 /* TextBubbleView.swift */,
+			);
+			path = TextBubbleView;
+			sourceTree = "<group>";
+		};
+		C5B0D28E2231781B00841224 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				C5B0D28F2231782C00841224 /* CGSize+Extension.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,7 +458,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B0D27D2231483300841224 /* InputMessageView.xib in Resources */,
 				C58E8FA1223002230022B304 /* LaunchScreen.storyboard in Resources */,
+				C5B0D277223147B200841224 /* MessageTableViewCell.xib in Resources */,
 				C58E8F9E223002230022B304 /* Assets.xcassets in Resources */,
 				C58E8F9C223002230022B304 /* Main.storyboard in Resources */,
 			);
@@ -407,17 +488,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58E8FD9223004A00022B304 /* UIApllication+Extension.swift in Sources */,
+				C5B0D28022315A0300841224 /* AppConfig.swift in Sources */,
+				C5B0D28522315BCC00841224 /* Dimension.swift in Sources */,
 				C58E8FE82230099A0022B304 /* BaseXibView.swift in Sources */,
+				C5B0D27B2231481A00841224 /* InputMessageView.swift in Sources */,
+				C5B0D279223147EC00841224 /* MessageCellViewModel.swift in Sources */,
+				C5B0D2902231782C00841224 /* CGSize+Extension.swift in Sources */,
+				C5B0D28B2231741F00841224 /* TextBubbleLayoutModel.swift in Sources */,
 				C58E8FCC223002A50022B304 /* Message.swift in Sources */,
 				C58E8F99223002230022B304 /* MessageViewController.swift in Sources */,
 				C58E8FDD2230064A0022B304 /* Reusable.swift in Sources */,
 				C58E8FCE223002B10022B304 /* MessageViewModel.swift in Sources */,
 				C58E8FD5223003790022B304 /* String+Extension.swift in Sources */,
+				C5B0D276223147B200841224 /* MessageTableViewCell.swift in Sources */,
+				C5B0D2872231713500841224 /* UIView+Extension.swift in Sources */,
 				C58E8F97223002230022B304 /* AppDelegate.swift in Sources */,
 				C58E8FE5223009060022B304 /* BaseUITableViewCell.swift in Sources */,
+				C5B0D2922231796A00841224 /* TextBubbleView.swift in Sources */,
 				C58E8FE12230080D0022B304 /* BaseUIView.swift in Sources */,
 				C58E8FD7223004250022B304 /* NSNotification+Extension.swift in Sources */,
+				C5B0D28D2231754700841224 /* UIEdgeInsets+Extension.swift in Sources */,
 				C58E8FDB223005650022B304 /* UITableView+Extension.swift in Sources */,
+				C5B0D28322315BBA00841224 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

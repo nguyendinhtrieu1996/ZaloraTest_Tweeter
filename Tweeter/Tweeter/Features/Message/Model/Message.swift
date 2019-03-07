@@ -9,5 +9,5 @@
 import Foundation
 
 class Message {
-    
+    private (set) var text = ""
 }

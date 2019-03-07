@@ -12,6 +12,7 @@ class BaseUITableViewCell: UITableViewCell, Reusable, ReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         layoutIfNeeded()
+        selectionStyle = .none
         initialize()
     }
     

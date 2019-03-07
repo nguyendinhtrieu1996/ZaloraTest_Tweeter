@@ -8,17 +8,17 @@
 
 import UIKit
 
-class BaseUIView: UIView, ReusableView {
+open class BaseUIView: UIView, ReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialize()
     }
     
-    func initialize() {
+    open func initialize() {
     }
 }
