@@ -38,7 +38,3 @@ extension NSNotification {
         return KeyboardAnimationInfo(constraint: yConstraint, duration: duration, option: animationCurve)
     }
 }
-
-public protocol HashableRepresentible {
-    var asHashable: AnyHashable { get }
-}

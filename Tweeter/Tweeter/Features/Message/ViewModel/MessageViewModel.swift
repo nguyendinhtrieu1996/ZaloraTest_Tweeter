@@ -11,8 +11,7 @@ import Foundation
 protocol MessageViewModelDelegate: class {
     func updateMessageViewBottomConstraint(with keyboardInfo: KeyboardAnimationInfo)
     func updateSendButtonState(isEnable: Bool)
-    func reloadData()
-    func shoudClearInputText()
+    func updateLayoutSendMessageSuccess()
 }
 
 // MARK: -
@@ -25,13 +24,15 @@ class MessageViewModel {
         return messages.count
     }
     
-    // MARK: Lifecycle
+    var lastMessageIndexPath: IndexPath {
+        return IndexPath(row: numberMessages - 1, section: 0)
+    }
     
     init() {
     }
     
-    func getMessageCellViewModel(at indexPath: IndexPath) -> MessageCellViewModel? {
-        guard let message = messages[safe: indexPath.row] else {
+    func getMessageCellViewModel(at index: Int) -> MessageCellViewModel? {
+        guard let message = messages[safe: index] else {
             return nil
         }
         return MessageCellViewModel(with: message)
@@ -50,10 +51,13 @@ class MessageViewModel {
 
 extension MessageViewModel: InputMessageViewDelegate {
     func didSelectSendButton(with message: String) {
-        let message = Message(text: message)
-        messages.append(message)
-        delegate?.reloadData()
-        delegate?.shoudClearInputText()
+        guard let subMessages = Message.splitMessage(message) else {
+            return
+        }
+        subMessages.forEach {
+            messages.append($0)
+        }
+        delegate?.updateLayoutSendMessageSuccess()
     }
     
     func inputTextValueChange(with text: String?) {

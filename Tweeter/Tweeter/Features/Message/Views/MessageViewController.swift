@@ -46,6 +46,7 @@ class MessageViewController: UIViewController {
     
     private func setupMessageCollectionView() {
         messageCollectionView?.registerReusableCell(MessageCollectionViewCell.self)
+        messageCollectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
        
     }
     
@@ -73,7 +74,7 @@ extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MessageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath) else {
+        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath.row) else {
             return cell
         }
         cell.setupData(with: messageCellViewModel)
@@ -84,23 +85,30 @@ extension MessageViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension MessageViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath) else {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath.row) else {
             return CGSize.zero
         }
         return messageCellViewModel.calculateCellSize()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 6
     }
 }
 
 // MARK: - MessageViewModelDelegate
 
 extension MessageViewController: MessageViewModelDelegate {
-    func shoudClearInputText() {
-        inputMessageView?.clearInputText()
-    }
-    
-    func reloadData() {
+    func updateLayoutSendMessageSuccess() {
         messageCollectionView?.reloadData()
+        messageCollectionView?.scrollToItem(at: messageViewModel.lastMessageIndexPath, at: .bottom, animated: true)
+        inputMessageView?.clearInputText()
+        updateSendButtonState(isEnable: false)
     }
     
     func updateSendButtonState(isEnable: Bool) {

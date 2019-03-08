@@ -13,7 +13,7 @@ final class TextBubbleLayoutModel {
     
     struct LayoutContext: Equatable {
         var text: String = ""
-        var font: UIFont = Dimension.shared.defaultMessageFont
+        var font: UIFont = Dimension.shared.bodyFont
         var textColor: UIColor = Theme.shared.defaultTextColor
         var textInsets: UIEdgeInsets = Dimension.shared.defaultMessageInsets
         var preferedMaxLayoutWidth: CGFloat = Dimension.shared.bubbleViewMaxLayoutWith

@@ -31,6 +31,8 @@ class InputMessageView: BaseXibView, Reusable {
         Bundle.main.loadNibNamed(InputMessageView.reuseIdentifier, owner: self, options: nil)
         commonInit(view: containerView)
         inputMessageTextView?.delegate = self
+        inputMessageTextView?.layer.cornerRadius = 17
+        inputMessageTextView?.layer.masksToBounds = true
     }
     
     @IBAction func tappedOnSendButton(_ sender: Any) {
