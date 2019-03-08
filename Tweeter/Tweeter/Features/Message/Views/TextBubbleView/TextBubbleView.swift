@@ -8,42 +8,21 @@
 
 import UIKit
 
-public class TextBubbleStyle {
-    private (set) var text = ""
-    private (set) var font: UIFont = Dimension.shared.defaultMessageFont
-    private (set) var textColor: UIColor = Theme.shared.defaultTextColor
-    private (set) var textInsets = Dimension.shared.defaultMessageInsets
-    
-    init() {
-    }
-    
-    init(text: String,
-         font: UIFont = Dimension.shared.defaultMessageFont,
-         textColor: UIColor = Theme.shared.defaultTextColor,
-         textInsets: UIEdgeInsets = Dimension.shared.defaultMessageInsets ) {
-        self.text = text
-        self.font = font
-        self.textColor = textColor
-    }
-    
-}
-
-// MARK: -
-
 public final class TextBubbleView: BaseUIView {
     // MARK: Properties
-    public var preferredMaxLayoutWidth: CGFloat = Dimension.shared.bubbleViewMaxLayoutWith
-    
-    var style = TextBubbleStyle() {
+    var layoutContext = TextBubbleLayoutModel.LayoutContext() {
         didSet {
             updateTextView()
+            updateLayout()
         }
     }
     
     // MARK: UI Elements
-    private lazy var bubbleImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
+    private lazy var bubbleImageView: UIView = {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.5734767318, green: 0.09810661525, blue: 0.7285373807, alpha: 1)
+        view.layer.cornerRadius = 12
+        return view
     }()
     
     private var textView: UITextView = {
@@ -72,52 +51,34 @@ public final class TextBubbleView: BaseUIView {
         addSubview(textView)
     }
     
-    // MARK: Layout
-    
-    public override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return self.calculateTextBubbleLayout(preferredMaxLayoutWidth: size.width).size
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        let layout = calculateTextBubbleLayout(preferredMaxLayoutWidth: preferredMaxLayoutWidth)
-        textView.frame = layout.textFrame
-        bubbleImageView.frame = layout.bubbleFrame
-    }
-    
-    private func calculateTextBubbleLayout(preferredMaxLayoutWidth: CGFloat) -> TextBubbleLayoutModel {
-        let layoutContext = TextBubbleLayoutModel.LayoutContext(
-            text: style.text,
-            font: style.font,
-            textInsets: style.textInsets,
-            preferedMaxLayoutWidth: preferredMaxLayoutWidth)
-        
-        let layoutModel = TextBubbleLayoutModel(layoutContext: layoutContext)
-        layoutModel.calculateLayout()
-        return layoutModel
-    }
-    
     // MARK: Helper methods
     
     private func updateTextView() {
         var needToUpdate = false
-        if textView.font != style.font {
-            textView.font = style.font
+        if textView.font != layoutContext.font {
+            textView.font = layoutContext.font
             needToUpdate = true
         }
         
-        if textView.textColor != style.textColor {
-            textView.textColor = style.textColor
+        if textView.textColor != layoutContext.textColor {
+            textView.textColor = layoutContext.textColor
             needToUpdate = true
         }
         
-        if needToUpdate || textView.text != style.text {
-            textView.text = style.text
+        if needToUpdate || textView.text != layoutContext.text {
+            textView.text = layoutContext.text
         }
         
-        if textView.textContainerInset != style.textInsets {
-            textView.textContainerInset = style.textInsets
+        if textView.textContainerInset != layoutContext.textInsets {
+            textView.textContainerInset = layoutContext.textInsets
         }
+    }
+    
+    private func updateLayout() {
+        let layoutModel = TextBubbleLayoutModel(layoutContext: layoutContext)
+        layoutModel.calculateLayout()
+        textView.frame = layoutModel.textFrame
+        bubbleImageView.frame = layoutModel.bubbleFrame
     }
     
 }

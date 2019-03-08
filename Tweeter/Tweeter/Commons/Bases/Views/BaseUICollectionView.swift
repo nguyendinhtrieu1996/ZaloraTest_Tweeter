@@ -1,18 +1,16 @@
 //
-//  BaseUITableViewCell.swift
+//  BaseUICollectionView.swift
 //  Tweeter
 //
-//  Created by MACOS on 3/6/19.
+//  Created by Nguyen Dinh Trieu on 3/8/19.
 //  Copyright © 2019 MACOS. All rights reserved.
 //
 
 import UIKit
 
-class BaseUITableViewCell: UITableViewCell, Reusable, ReusableView {
+class BaseUICollectiionCell: UICollectionViewCell, Reusable, ReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutIfNeeded()
-        selectionStyle = .none
         initialize()
     }
     

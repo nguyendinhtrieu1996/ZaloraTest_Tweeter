@@ -12,15 +12,35 @@ final class TextBubbleLayoutModel {
     // MARK: Helper Type
     
     struct LayoutContext: Equatable {
-        let text: String
-        let font: UIFont
-        let textInsets: UIEdgeInsets
-        let preferedMaxLayoutWidth: CGFloat
+        var text: String = ""
+        var font: UIFont = Dimension.shared.defaultMessageFont
+        var textColor: UIColor = Theme.shared.defaultTextColor
+        var textInsets: UIEdgeInsets = Dimension.shared.defaultMessageInsets
+        var preferedMaxLayoutWidth: CGFloat = Dimension.shared.bubbleViewMaxLayoutWith
+        
+        init() {
+        }
+        
+        init(text: String) {
+            self.text = text
+        }
+        
+        init(text: String,
+             font: UIFont,
+             textColor: UIColor,
+             textInsets: UIEdgeInsets,
+             preferedMaxLayoutWidth: CGFloat) {
+            self.text = text
+            self.font = font
+            self.textColor = textColor
+            self.textInsets = textInsets
+            self.preferedMaxLayoutWidth = preferedMaxLayoutWidth
+        }
     }
     
     // MARK: Properties
     
-    private (set) var layoutContext: LayoutContext
+    private var layoutContext: LayoutContext
     private (set) var textFrame = CGRect.zero
     private (set) var bubbleFrame = CGRect.zero
     private (set) var size = CGSize.zero
@@ -42,7 +62,7 @@ final class TextBubbleLayoutModel {
         size = bubbleSize
     }
     
-    func textSizeThatFitsWidth(_ width: CGFloat) -> CGSize {
+    private func textSizeThatFitsWidth(_ width: CGFloat) -> CGSize {
         let textContainer: NSTextContainer = {
             let size = CGSize(width: width, height: .greatestFiniteMagnitude)
             let container = NSTextContainer(size: size)
@@ -52,7 +72,7 @@ final class TextBubbleLayoutModel {
         
         let textStorage = replaceUITextViewNSTextStorage()
         let layoutManager: NSLayoutManager = {
-           let layoutManager = NSLayoutManager()
+            let layoutManager = NSLayoutManager()
             layoutManager.addTextContainer(textContainer)
             textStorage.addLayoutManager(layoutManager)
             return layoutManager
@@ -67,8 +87,8 @@ final class TextBubbleLayoutModel {
         return NSTextStorage(
             string: layoutContext.text,
             attributes: [
-            NSAttributedString.Key.font: layoutContext.font,
-            NSAttributedString.Key(rawValue: "NSOriginalFont"): layoutContext.font
+                NSAttributedString.Key.font: layoutContext.font,
+                NSAttributedString.Key(rawValue: "NSOriginalFont"): layoutContext.font
             ]
         )
     }

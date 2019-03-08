@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88C0496022324C82005A4D25 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */; };
+		88C0496422324E98005A4D25 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */; };
+		88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */; };
+		88C0496722324EB3005A4D25 /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */; };
+		88C04969223251BF005A4D25 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C04968223251BF005A4D25 /* Array+Extension.swift */; };
 		C58E8F97223002230022B304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8F96223002230022B304 /* AppDelegate.swift */; };
 		C58E8F99223002230022B304 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8F98223002230022B304 /* MessageViewController.swift */; };
 		C58E8F9C223002230022B304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58E8F9A223002230022B304 /* Main.storyboard */; };
@@ -19,13 +24,9 @@
 		C58E8FD5223003790022B304 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FD4223003790022B304 /* String+Extension.swift */; };
 		C58E8FD7223004250022B304 /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FD6223004250022B304 /* NSNotification+Extension.swift */; };
 		C58E8FD9223004A00022B304 /* UIApllication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FD8223004A00022B304 /* UIApllication+Extension.swift */; };
-		C58E8FDB223005650022B304 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FDA223005650022B304 /* UITableView+Extension.swift */; };
 		C58E8FDD2230064A0022B304 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FDC2230064A0022B304 /* Reusable.swift */; };
 		C58E8FE12230080D0022B304 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE02230080D0022B304 /* BaseUIView.swift */; };
-		C58E8FE5223009060022B304 /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */; };
 		C58E8FE82230099A0022B304 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FE72230099A0022B304 /* BaseXibView.swift */; };
-		C5B0D276223147B200841224 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D274223147B200841224 /* MessageTableViewCell.swift */; };
-		C5B0D277223147B200841224 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B0D275223147B200841224 /* MessageTableViewCell.xib */; };
 		C5B0D279223147EC00841224 /* MessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D278223147EC00841224 /* MessageCellViewModel.swift */; };
 		C5B0D27B2231481A00841224 /* InputMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D27A2231481A00841224 /* InputMessageView.swift */; };
 		C5B0D27D2231483300841224 /* InputMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B0D27C2231483300841224 /* InputMessageView.xib */; };
@@ -57,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
+		88C04968223251BF005A4D25 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		C58E8F93223002230022B304 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58E8F96223002230022B304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58E8F98223002230022B304 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -75,13 +81,9 @@
 		C58E8FD4223003790022B304 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C58E8FD6223004250022B304 /* NSNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extension.swift"; sourceTree = "<group>"; };
 		C58E8FD8223004A00022B304 /* UIApllication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApllication+Extension.swift"; sourceTree = "<group>"; };
-		C58E8FDA223005650022B304 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		C58E8FDC2230064A0022B304 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		C58E8FE02230080D0022B304 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
-		C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
 		C58E8FE72230099A0022B304 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
-		C5B0D274223147B200841224 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		C5B0D275223147B200841224 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		C5B0D278223147EC00841224 /* MessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModel.swift; sourceTree = "<group>"; };
 		C5B0D27A2231481A00841224 /* InputMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMessageView.swift; sourceTree = "<group>"; };
 		C5B0D27C2231483300841224 /* InputMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputMessageView.xib; sourceTree = "<group>"; };
@@ -120,6 +122,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88C0496122324E78005A4D25 /* MessageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5B0D278223147EC00841224 /* MessageCellViewModel.swift */,
+				88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */,
+				88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */,
+			);
+			path = MessageCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		C58E8F8A223002230022B304 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +218,7 @@
 			children = (
 				C58E8FD4223003790022B304 /* String+Extension.swift */,
 				C58E8FD6223004250022B304 /* NSNotification+Extension.swift */,
+				88C04968223251BF005A4D25 /* Array+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -214,9 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				C58E8FD8223004A00022B304 /* UIApllication+Extension.swift */,
-				C58E8FDA223005650022B304 /* UITableView+Extension.swift */,
 				C5B0D2862231713500841224 /* UIView+Extension.swift */,
 				C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */,
+				88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -244,7 +257,7 @@
 			children = (
 				C5B0D2892231740800841224 /* TextBubbleView */,
 				C58E8FEA223009C40022B304 /* InputMessageView */,
-				C58E8FE9223009B80022B304 /* MessageTableViewCell */,
+				88C0496122324E78005A4D25 /* MessageCollectionViewCell */,
 				C58E8F98223002230022B304 /* MessageViewController.swift */,
 			);
 			path = Views;
@@ -269,7 +282,6 @@
 		C58E8FD2223002EB0022B304 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
-				C5B0D27E2231486F00841224 /* CustomViews */,
 				C58E8FE62230094D0022B304 /* Views */,
 			);
 			path = Bases;
@@ -288,19 +300,9 @@
 			children = (
 				C58E8FE02230080D0022B304 /* BaseUIView.swift */,
 				C58E8FE72230099A0022B304 /* BaseXibView.swift */,
-				C58E8FE4223009060022B304 /* BaseUITableViewCell.swift */,
+				88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		C58E8FE9223009B80022B304 /* MessageTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C5B0D278223147EC00841224 /* MessageCellViewModel.swift */,
-				C5B0D274223147B200841224 /* MessageTableViewCell.swift */,
-				C5B0D275223147B200841224 /* MessageTableViewCell.xib */,
-			);
-			path = MessageTableViewCell;
 			sourceTree = "<group>";
 		};
 		C58E8FEA223009C40022B304 /* InputMessageView */ = {
@@ -319,13 +321,6 @@
 				C58E8F9F223002230022B304 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		C5B0D27E2231486F00841224 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		C5B0D28122315BAC00841224 /* Styles */ = {
@@ -460,7 +455,7 @@
 			files = (
 				C5B0D27D2231483300841224 /* InputMessageView.xib in Resources */,
 				C58E8FA1223002230022B304 /* LaunchScreen.storyboard in Resources */,
-				C5B0D277223147B200841224 /* MessageTableViewCell.xib in Resources */,
+				88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */,
 				C58E8F9E223002230022B304 /* Assets.xcassets in Resources */,
 				C58E8F9C223002230022B304 /* Main.storyboard in Resources */,
 			);
@@ -487,6 +482,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C0496022324C82005A4D25 /* UICollectionView+Extension.swift in Sources */,
+				88C0496422324E98005A4D25 /* MessageCollectionViewCell.swift in Sources */,
 				C58E8FD9223004A00022B304 /* UIApllication+Extension.swift in Sources */,
 				C5B0D28022315A0300841224 /* AppConfig.swift in Sources */,
 				C5B0D28522315BCC00841224 /* Dimension.swift in Sources */,
@@ -500,15 +497,14 @@
 				C58E8FDD2230064A0022B304 /* Reusable.swift in Sources */,
 				C58E8FCE223002B10022B304 /* MessageViewModel.swift in Sources */,
 				C58E8FD5223003790022B304 /* String+Extension.swift in Sources */,
-				C5B0D276223147B200841224 /* MessageTableViewCell.swift in Sources */,
+				88C04969223251BF005A4D25 /* Array+Extension.swift in Sources */,
 				C5B0D2872231713500841224 /* UIView+Extension.swift in Sources */,
 				C58E8F97223002230022B304 /* AppDelegate.swift in Sources */,
-				C58E8FE5223009060022B304 /* BaseUITableViewCell.swift in Sources */,
 				C5B0D2922231796A00841224 /* TextBubbleView.swift in Sources */,
 				C58E8FE12230080D0022B304 /* BaseUIView.swift in Sources */,
+				88C0496722324EB3005A4D25 /* BaseUICollectionView.swift in Sources */,
 				C58E8FD7223004250022B304 /* NSNotification+Extension.swift in Sources */,
 				C5B0D28D2231754700841224 /* UIEdgeInsets+Extension.swift in Sources */,
-				C58E8FDB223005650022B304 /* UITableView+Extension.swift in Sources */,
 				C5B0D28322315BBA00841224 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,8 +681,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DAA47P5N57;
+				DEVELOPMENT_TEAM = S4P9QA9YJ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -703,8 +700,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DAA47P5N57;
+				DEVELOPMENT_TEAM = S4P9QA9YJ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

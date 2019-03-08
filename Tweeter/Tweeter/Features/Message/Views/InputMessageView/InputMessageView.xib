@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,19 +32,22 @@
                                 <constraint firstAttribute="height" constant="1" id="Dbe-KT-KeH"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JyN-Ft-v1I">
-                            <rect key="frame" x="16" y="8" width="387" height="34"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JyN-Ft-v1I">
+                            <rect key="frame" x="16" y="8" width="411" height="34"/>
                             <color key="backgroundColor" red="0.95245307683944702" green="0.95711046457290649" blue="0.9646337628364563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v70-ym-ifl">
+                        <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v70-ym-ifl">
                             <rect key="frame" x="447" y="15" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="1h6-X6-Gvj"/>
                                 <constraint firstAttribute="height" constant="25" id="2MV-fg-Yg3"/>
                             </constraints>
-                            <state key="normal" backgroundImage="SendButton"/>
+                            <state key="normal" image="SendButtonEnable"/>
+                            <connections>
+                                <action selector="tappedOnSendButton:" destination="-1" eventType="touchUpInside" id="Lyy-Hc-yUD"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,7 +56,7 @@
                         <constraint firstAttribute="trailing" secondItem="v70-ym-ifl" secondAttribute="trailing" constant="12" id="IGv-0G-fw9"/>
                         <constraint firstItem="gzU-Uw-uoU" firstAttribute="leading" secondItem="7LW-es-zGt" secondAttribute="leading" constant="12" id="PD8-0c-Wsu"/>
                         <constraint firstItem="JyN-Ft-v1I" firstAttribute="top" secondItem="7LW-es-zGt" secondAttribute="top" constant="8" id="fhq-VC-Exf"/>
-                        <constraint firstItem="v70-ym-ifl" firstAttribute="leading" secondItem="JyN-Ft-v1I" secondAttribute="trailing" constant="44" id="g5b-HM-Wdn"/>
+                        <constraint firstItem="v70-ym-ifl" firstAttribute="leading" secondItem="JyN-Ft-v1I" secondAttribute="trailing" constant="20" id="g5b-HM-Wdn"/>
                         <constraint firstAttribute="bottom" secondItem="JyN-Ft-v1I" secondAttribute="bottom" constant="8" id="nyE-aV-g0f"/>
                         <constraint firstItem="gzU-Uw-uoU" firstAttribute="top" secondItem="7LW-es-zGt" secondAttribute="top" id="ot6-Or-MfR"/>
                         <constraint firstItem="JyN-Ft-v1I" firstAttribute="leading" secondItem="7LW-es-zGt" secondAttribute="leading" constant="16" id="pBS-9D-YiU"/>
@@ -73,6 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="SendButton" width="28" height="24"/>
+        <image name="SendButtonEnable" width="28" height="24"/>
     </resources>
 </document>

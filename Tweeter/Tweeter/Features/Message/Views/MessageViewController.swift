@@ -20,7 +20,7 @@ class MessageViewController: UIViewController {
     
     // MARK: UI Elements
     
-    @IBOutlet fileprivate weak var messageTableView: UITableView?
+    @IBOutlet fileprivate weak var messageCollectionView: UICollectionView?
     @IBOutlet fileprivate weak var inputMessageView: InputMessageView?
     
     // MARK: Constraints
@@ -34,20 +34,19 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
         registerNotification()
         setupNavigationBar()
-        setupMessageTableView()
+        setupMessageCollectionView()
+        inputMessageView?.delegate = messageViewModel
     }
     
     // MARK: SetupView
     
     private func setupNavigationBar() {
-        
+        title = "Tweeter Chat"
     }
     
-    private func setupMessageTableView() {
-        messageTableView?.registerReusableCell(MessageTableViewCell.self)
-        messageTableView?.separatorStyle = .none
-        messageTableView?.dataSource = self
-        messageTableView?.delegate = self
+    private func setupMessageCollectionView() {
+        messageCollectionView?.registerReusableCell(MessageCollectionViewCell.self)
+       
     }
     
     // MARK: Helper methods
@@ -65,39 +64,49 @@ class MessageViewController: UIViewController {
     
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UICollectionViewDataSource
 
-extension MessageViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let text = "Chatto is a Swift lightweight framework to build chat applications. It's been designed to be extensible and performant. Along with Chatto there is ChattoAdditions"
-        let style = TextBubbleLayoutModel.LayoutContext(
-            text: text,
-            font: Dimension.shared.defaultMessageFont,
-            textInsets: Dimension.shared.defaultMessageInsets,
-            preferedMaxLayoutWidth: Dimension.shared.bubbleViewMaxLayoutWith)
-        let x = TextBubbleLayoutModel(layoutContext: style)
-        x.calculateLayout()
-        return x.size.height
+extension MessageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return messageViewModel.numberMessages
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: MessageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath) else {
+            return cell
+        }
+        cell.setupData(with: messageCellViewModel)
+        return cell
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UICollectionViewDelegateFlowLayout
 
-extension MessageViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 200
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MessageTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        cell.setupMessage(message: "Chatto is a Swift lightweight framework to build chat applications. It's been designed to be extensible and performant. Along with Chatto there is ChattoAdditions")
-        return cell
+extension MessageViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath) else {
+            return CGSize.zero
+        }
+        return messageCellViewModel.calculateCellSize()
     }
 }
 
 // MARK: - MessageViewModelDelegate
 
 extension MessageViewController: MessageViewModelDelegate {
+    func shoudClearInputText() {
+        inputMessageView?.clearInputText()
+    }
+    
+    func reloadData() {
+        messageCollectionView?.reloadData()
+    }
+    
+    func updateSendButtonState(isEnable: Bool) {
+        inputMessageView?.updateSendButtonState(isEnable: isEnable)
+    }
+    
     func updateMessageViewBottomConstraint(with keyboardInfo: KeyboardAnimationInfo) {
         inputMessageViewBottomConst?.constant = -keyboardInfo.constraint
         

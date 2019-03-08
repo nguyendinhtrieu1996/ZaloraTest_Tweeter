@@ -15,7 +15,7 @@ public class Theme {
     }
     
     public var defaultTextColor: UIColor {
-        return UIColor.black
+        return UIColor.white
     }
     
 }

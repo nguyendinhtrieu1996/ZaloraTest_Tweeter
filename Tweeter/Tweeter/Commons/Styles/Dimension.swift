@@ -15,15 +15,14 @@ public class Dimension {
     }
     
     public var defaultMessageFont: UIFont {
-        return UIFont.systemFont(ofSize: 12)
+        return UIFont.systemFont(ofSize: 14)
     }
     
     public var defaultMessageInsets: UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4)
+        return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
     
     public var bubbleViewMaxLayoutWith: CGFloat {
         return 250
     }
-    
 }

@@ -10,4 +10,8 @@ import Foundation
 
 class Message {
     private (set) var text = ""
+    
+    init(text: String) {
+        self.text = text
+    }
 }

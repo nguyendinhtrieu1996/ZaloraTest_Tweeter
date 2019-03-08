@@ -8,29 +8,52 @@
 
 import UIKit
 
+protocol InputMessageViewDelegate: class {
+    func didSelectSendButton(with message: String)
+    func inputTextValueChange(with text: String?)
+}
+
 class InputMessageView: BaseXibView, Reusable {
     
     // MARK: Properties
     
+    weak var delegate: InputMessageViewDelegate?
+    
     // MARK: UI Elements
     
-    @IBOutlet weak var containerView: InputMessageView?
-    @IBOutlet weak var inputMessageTextView: UITextView?
-    @IBOutlet weak var sendButton: UIButton?
+    @IBOutlet private weak var containerView: InputMessageView?
+    @IBOutlet private weak var inputMessageTextView: UITextView?
+    @IBOutlet private weak var sendButton: UIButton?
     
     // MARK: Lifecycle
     
     override func initialize() {
         Bundle.main.loadNibNamed(InputMessageView.reuseIdentifier, owner: self, options: nil)
         commonInit(view: containerView)
-        layoutIfNeeded()
-        setupViewInputMessageTextView()
+        inputMessageTextView?.delegate = self
     }
     
-    private func setupViewInputMessageTextView() {
-        let height = inputMessageTextView?.frameHeight ?? 0
-        inputMessageTextView?.layer.cornerRadius = height / 2
-        inputMessageTextView?.layer.masksToBounds = true
+    @IBAction func tappedOnSendButton(_ sender: Any) {
+        guard let text = inputMessageTextView?.text else {
+            return
+        }
+        delegate?.didSelectSendButton(with: text)
     }
     
+    func updateSendButtonState(isEnable: Bool) {
+        sendButton?.isEnabled = isEnable
+    }
+    
+    func clearInputText() {
+        inputMessageTextView?.text = nil
+    }
+    
+}
+
+// MARK: - UITextViewDelegate
+
+extension InputMessageView: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        delegate?.inputTextValueChange(with: textView.text)
+    }
 }

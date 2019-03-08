@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol Reusable {
+public protocol Reusable {
     static var reuseIdentifier: String { get }
     static var nib: UINib? { get }
 }
 
-extension Reusable {
+public extension Reusable {
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
@@ -25,6 +25,6 @@ extension Reusable {
 
 // MARK: -
 
-protocol ReusableView {
+public protocol ReusableView {
     func initialize()
 }
