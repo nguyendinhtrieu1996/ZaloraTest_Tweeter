@@ -45,6 +45,10 @@ class MessageViewModel {
         delegate?.updateMessageViewBottomConstraint(with: keyboardInfo)
     }
     
+    func clearMessages() {
+        messages.removeAll()
+    }
+    
 }
 
 // MARK: - InputMessageViewDelegate

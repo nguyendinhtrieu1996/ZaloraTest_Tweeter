@@ -38,6 +38,12 @@ class MessageViewController: UIViewController {
         inputMessageView?.delegate = messageViewModel
     }
     
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        messageViewModel.clearMessages()
+        messageCollectionView?.reloadData()
+    }
+    
     // MARK: SetupView
     
     private func setupNavigationBar() {

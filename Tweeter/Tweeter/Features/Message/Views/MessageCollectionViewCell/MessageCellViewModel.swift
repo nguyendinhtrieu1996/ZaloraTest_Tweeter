@@ -15,7 +15,7 @@ class MessageCellViewModel {
     
     var layoutContext: TextBubbleLayoutModel.LayoutContext {
         if cacheLayoutContext == nil {
-            cacheLayoutContext = TextBubbleLayoutModel.LayoutContext(text: message.message)
+            cacheLayoutContext = TextBubbleLayoutModel.LayoutContext(text: message.text)
         }
         return cacheLayoutContext ?? TextBubbleLayoutModel.LayoutContext()
     }

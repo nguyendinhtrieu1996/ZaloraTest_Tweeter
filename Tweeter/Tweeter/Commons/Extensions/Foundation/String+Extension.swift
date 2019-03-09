@@ -9,55 +9,53 @@
 import Foundation
 
 public extension String {
-    subscript (_ i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
-    }
     
-    subscript(_ range: CountableRange<Int>) -> String {
-        let idx1 = index(startIndex, offsetBy: max(0, range.lowerBound))
-        let idx2 = index(startIndex, offsetBy: min(self.count, range.upperBound))
-        return String(self[idx1..<idx2])
-    }
-    
-    func distance(to index: Index) -> Int {
-        return distance(from: startIndex, to: index)
-    }
-    
-    func splitMessage() -> [String]? {
-        let count = self.count
-        let maxLenght = 50
-        
-        guard count > maxLenght else {
-            return [self]
+    func moveForward(currentIndex: Index, value: Int) -> Index {
+        if distance(from: currentIndex, to: endIndex) <= value {
+            return endIndex
         }
+        return index(currentIndex, offsetBy: value)
+    }
+    
+    func moveBackward(currentIndex: Index, value: Int) -> Index {
+        if distance(from: startIndex, to: currentIndex) <= value {
+            return startIndex
+        }
+        return index(currentIndex, offsetBy: -value)
+    }
+    
+    mutating func addPartIndicator(with partIndicator: String, at index: Index, endIndex: Index) -> Bool {
+        let needMoveEndIndex = (endIndex == self.endIndex)
+        var indicator = partIndicator
         
-        var output: [String] = []
-        var currentIndex = 0
-        var numberOfParts = 0
-        
-        while currentIndex < count {
-            let previousIndex = currentIndex
-            numberOfParts += 1
-            currentIndex += maxLenght
-            
-            var subString = self[previousIndex..<currentIndex]
-            
-            if subString.last == " " || currentIndex >= count {
-                output.append(subString)
-            } else if self[index(startIndex, offsetBy: currentIndex)] == " " {
-                output.append(subString)
-            } else {
-                guard let lastIndex = subString.lastIndex(of: " ") else {
-                    return nil
-                }
-                
-                let distance = subString.distance(from: startIndex, to: lastIndex)
-                currentIndex = previousIndex + distance
-                subString = self[previousIndex..<currentIndex]
-                output.append(subString)
+        if self[index] != " " {
+            indicator += " "
+        }
+        insert(contentsOf: indicator, at: index)
+        return needMoveEndIndex
+    }
+    
+    func isStopWord(index: Index) -> Bool {
+        if index == endIndex {
+            return true
+        }
+        let nextIndex = moveForward(currentIndex: index, value: 1)
+        if self[nextIndex] == " " || self[index] == " " {
+            return true
+        }
+        return false
+    }
+    
+    func findStopWord(from index: Index, minIndex: Index) -> Index? {
+        var currentIndex = index
+        while currentIndex >= minIndex {
+            if self[currentIndex] == " " {
+                return currentIndex
             }
+            currentIndex = moveBackward(currentIndex: currentIndex, value: 1)
         }
-        
-        return output
+    
+        return nil
     }
+    
 }
