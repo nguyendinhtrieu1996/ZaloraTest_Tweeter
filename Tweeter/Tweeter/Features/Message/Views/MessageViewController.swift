@@ -38,12 +38,6 @@ class MessageViewController: UIViewController {
         inputMessageView?.delegate = messageViewModel
     }
     
-    
-    @IBAction func deleteButton(_ sender: Any) {
-        messageViewModel.clearMessages()
-        messageCollectionView?.reloadData()
-    }
-    
     // MARK: SetupView
     
     private func setupNavigationBar() {
@@ -80,10 +74,10 @@ extension MessageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MessageCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath.row) else {
+        guard let messageCellViewModel = messageViewModel.viewModelForCell(at: indexPath.row) else {
             return cell
         }
-        cell.setupData(with: messageCellViewModel)
+        cell.configure(with: messageCellViewModel)
         return cell
     }
 }
@@ -94,7 +88,7 @@ extension MessageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let messageCellViewModel = messageViewModel.getMessageCellViewModel(at: indexPath.row) else {
+        guard let messageCellViewModel = messageViewModel.viewModelForCell(at: indexPath.row) else {
             return CGSize.zero
         }
         return messageCellViewModel.calculateCellSize()

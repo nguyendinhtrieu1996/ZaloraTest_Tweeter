@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct SplitPoint {
-    var startIndex: String.Index
-    var endIndex: String.Index
-    var currentPart: Int
+public struct SplitPoint {
+    private (set) var startIndex: String.Index
+    private (set) var endIndex: String.Index
+    private (set) var currentPart: Int
     
     init(_ startIndex: String.Index, _ endIndex: String.Index, _ currentPart: Int) {
         self.startIndex = startIndex

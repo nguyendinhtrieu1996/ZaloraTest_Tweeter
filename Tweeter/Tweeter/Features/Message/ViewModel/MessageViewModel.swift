@@ -31,7 +31,11 @@ class MessageViewModel {
     init() {
     }
     
-    func getMessageCellViewModel(at index: Int) -> MessageCellViewModel? {
+    init(with message: [Message]) {
+        self.messages = message
+    }
+    
+    func viewModelForCell(at index: Int) -> MessageCellViewModel? {
         guard let message = messages[safe: index] else {
             return nil
         }
@@ -43,10 +47,6 @@ class MessageViewModel {
             return
         }
         delegate?.updateMessageViewBottomConstraint(with: keyboardInfo)
-    }
-    
-    func clearMessages() {
-        messages.removeAll()
     }
     
 }

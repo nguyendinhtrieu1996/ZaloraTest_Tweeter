@@ -9,13 +9,20 @@
 import Foundation
 
 public extension String {
+    subscript(safe index: Index) -> Character? {
+        guard index >= startIndex && index < endIndex else {
+            return nil
+        }
+        return self[index]
+    }
+    
     func moveIndex(of currentIndex: Index, by value: Int) -> Index {
         if value >= 0 {
             if distance(from: currentIndex, to: endIndex) <= value {
                 return endIndex
             }
         } else {
-            if distance(from: startIndex, to: currentIndex) <= value {
+            if distance(from: startIndex, to: currentIndex) <= abs(value) {
                 return startIndex
             }
         }
@@ -23,9 +30,13 @@ public extension String {
     }
     
     mutating func addPartIndicator(with partIndicator: String, at index: Index) {
+        guard index >= startIndex && index < endIndex else {
+            return
+        }
+        
         var indicator = partIndicator
 
-        if self[index] != " " {
+        if self[safe: index] != " " {
             indicator += " "
         }
         insert(contentsOf: indicator, at: index)
@@ -36,7 +47,7 @@ public extension String {
             return true
         }
         let previousIndex = moveIndex(of: endPartIndex, by: -1)
-        if self[previousIndex] == " " || self[endPartIndex] == " " || self[previousIndex] == "." {
+        if self[safe: previousIndex] == " " || self[safe: endPartIndex] == " " {
             return true
         }
         return false
@@ -45,7 +56,7 @@ public extension String {
     func findStopWord(from index: Index, minIndex: Index) -> Index? {
         var currentIndex = index
         while currentIndex > minIndex {
-            if self[currentIndex] == " " {
+            if self[safe: currentIndex] == " " {
                 return currentIndex
             }
             currentIndex = moveIndex(of: currentIndex, by: -1)

@@ -12,6 +12,7 @@
 		88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */; };
 		88C0496722324EB3005A4D25 /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */; };
 		88C04969223251BF005A4D25 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C04968223251BF005A4D25 /* Array+Extension.swift */; };
+		C51349C222353FF400A90B58 /* MessageCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */; };
 		C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D1592234A6B40027CE0B /* CGSizeTests.swift */; };
 		C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15B2234A7D20027CE0B /* UIViewTests.swift */; };
 		C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */; };
@@ -41,6 +42,8 @@
 		C5B0D28D2231754700841224 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */; };
 		C5B0D2902231782C00841224 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D28F2231782C00841224 /* CGSize+Extension.swift */; };
 		C5B0D2922231796A00841224 /* TextBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0D2912231796A00841224 /* TextBubbleView.swift */; };
+		C5B412202234F32B0057E683 /* MessageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */; };
+		C5B412222234F93A0057E683 /* MockMessageViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
 		88C04968223251BF005A4D25 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModelTests.swift; sourceTree = "<group>"; };
 		C513D1592234A6B40027CE0B /* CGSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
 		C513D15B2234A7D20027CE0B /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsTests.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		C5B0D28C2231754700841224 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		C5B0D28F2231782C00841224 /* CGSize+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 		C5B0D2912231796A00841224 /* TextBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBubbleView.swift; sourceTree = "<group>"; };
+		C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModelTests.swift; sourceTree = "<group>"; };
+		C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 		C58E8F95223002230022B304 /* Tweeter */ = {
 			isa = PBXGroup;
 			children = (
+				C5B412272234FC300057E683 /* Supports */,
 				C58E8FC4223002290022B304 /* Resources */,
 				C58E8FC5223002580022B304 /* Commons */,
 				C5B0D2732231476B00841224 /* Storyboards */,
@@ -185,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C513D1562234A68A0027CE0B /* Extensions */,
+				C5B4121D2234EE950057E683 /* Features */,
 				C58E8FAD223002230022B304 /* Info.plist */,
 			);
 			path = TweeterTests;
@@ -202,9 +210,7 @@
 		C58E8FC4223002290022B304 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C58E8FA2223002230022B304 /* Info.plist */,
 				C58E8F9D223002230022B304 /* Assets.xcassets */,
-				C58E8F96223002230022B304 /* AppDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -364,6 +370,41 @@
 				C5B0D28F2231782C00841224 /* CGSize+Extension.swift */,
 			);
 			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		C5B4121D2234EE950057E683 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C5B4121E2234EEA80057E683 /* Message */,
+				C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */,
+				C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C5B4121E2234EEA80057E683 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C5B412232234F9970057E683 /* Mock */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		C5B412232234F9970057E683 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C5B412272234FC300057E683 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				C58E8FA2223002230022B304 /* Info.plist */,
+				C58E8F96223002230022B304 /* AppDelegate.swift */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,11 +571,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B412222234F93A0057E683 /* MockMessageViewModelDelegate.swift in Sources */,
 				C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */,
 				C513D1622234ABAC0027CE0B /* StringTests.swift in Sources */,
+				C5B412202234F32B0057E683 /* MessageViewModelTests.swift in Sources */,
 				C513D1602234AA490027CE0B /* ArrayTests.swift in Sources */,
 				C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */,
 				C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */,
+				C51349C222353FF400A90B58 /* MessageCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S4P9QA9YJ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -722,7 +766,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S4P9QA9YJ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tweeter/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

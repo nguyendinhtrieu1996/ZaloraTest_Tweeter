@@ -10,15 +10,14 @@ import UIKit
 
 class MessageCollectionViewCell: BaseUICollectiionCell {
     private var viewModel = MessageCellViewModel(with: Message(text: ""))
-    @IBOutlet weak var textBubbleView: TextBubbleView?
+    @IBOutlet private weak var textBubbleView: TextBubbleView?
     
     override func initialize() {
-        
     }
     
-    func setupData(with viewModel: MessageCellViewModel) {
+    func configure(with viewModel: MessageCellViewModel) {
         self.viewModel = viewModel
-        textBubbleView?.layoutContext = viewModel.layoutContext
+        textBubbleView?.layoutContext = self.viewModel.layoutContext
     }
 
 }

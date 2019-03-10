@@ -53,13 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qMu-bw-mMX">
-                        <barButtonItem key="rightBarButtonItem" title="Xoa" id="OV4-p5-kx7">
-                            <connections>
-                                <action selector="deleteButton:" destination="BYZ-38-t0r" id="1GU-OG-KfM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="qMu-bw-mMX"/>
                     <connections>
                         <outlet property="inputMessageView" destination="VOh-sb-HaO" id="vI4-Bn-sCq"/>
                         <outlet property="inputMessageViewBottomConst" destination="oSx-gS-7l1" id="K7Z-nT-w1r"/>

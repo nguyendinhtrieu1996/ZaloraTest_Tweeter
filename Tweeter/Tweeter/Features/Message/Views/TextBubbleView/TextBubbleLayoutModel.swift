@@ -12,11 +12,11 @@ final class TextBubbleLayoutModel {
     // MARK: Helper Type
     
     struct LayoutContext: Equatable {
-        var text: String = ""
-        var font: UIFont = Dimension.shared.bodyFont
-        var textColor: UIColor = Theme.shared.defaultTextColor
-        var textInsets: UIEdgeInsets = Dimension.shared.defaultMessageInsets
-        var preferedMaxLayoutWidth: CGFloat = Dimension.shared.bubbleViewMaxLayoutWith
+        private (set) var text: String = ""
+        private (set) var font: UIFont = Dimension.shared.bodyFont
+        private (set) var textColor: UIColor = Theme.shared.defaultTextColor
+        private (set) var textInsets: UIEdgeInsets = Dimension.shared.defaultMessageInsets
+        private (set) var preferedMaxLayoutWidth: CGFloat = Dimension.shared.bubbleViewMaxLayoutWith
         
         init() {
         }
