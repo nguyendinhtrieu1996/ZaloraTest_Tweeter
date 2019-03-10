@@ -19,13 +19,13 @@ struct SplitPoint {
         self.currentPart = currentPart
     }
     
-    static func partIndicator(currentPart: Int, totalPart: Int) -> String {
+    static func partIndicator(_ currentPart: Int, _ totalPart: Int) -> String {
         return "\(currentPart)/\(totalPart)"
     }
     
-    func partIndicatorRange(in text: String, partIndicator: String) -> Range<String.Index> {
-        let index = text.moveForward(currentIndex: startIndex, value: partIndicator.count)
-        return startIndex..<index
+    func partIndicatorRange(in text: String, _ partIndicator: String) -> Range<String.Index> {
+        let endIndex = text.moveIndex(of: startIndex, by: partIndicator.count)
+        return startIndex..<endIndex
     }
     
 }
@@ -34,67 +34,52 @@ struct SplitPoint {
 
 public class Message {
     private (set) var text = ""
-    private var cacheMessage: String?
-    private (set) var currentPart: Int?
-    private (set) var totalPart: Int?
     public static var maxLenght = 50
     
     init(text: String) {
         self.text = text
     }
-    
-    init(text: String, currentPart: Int, totalPart: Int? = nil) {
-        self.text = text
-        self.currentPart = currentPart
-        self.totalPart = totalPart
-    }
-    
-    func setTotalPart(with value: Int) {
-        totalPart = value
-    }
-    
+
     static func splitMessage(_ string: String, totalPart: Int? = nil) -> [Message]? {
-        var text = string
-        let count = text.count
-        guard count > maxLenght else {
-            return [Message(text: text)]
+        guard string.count > maxLenght else {
+            return [Message(text: string)]
         }
-        var estimateParts = Int(ceil(CGFloat(count) / CGFloat(maxLenght)))
-        if let totalPart = totalPart{
+        var estimateParts = Int(ceil(CGFloat(string.count) / CGFloat(maxLenght)))
+        if let totalPart = totalPart {
             estimateParts = totalPart
         }
-        var startIndex = text.startIndex
-        var endIndex = text.moveForward(currentIndex: startIndex, value: maxLenght)
+        var text = string
+        var startPartIndex = text.startIndex
+        var endPartIndex = text.moveIndex(of: startPartIndex, by: maxLenght)
         var splitPoints: [SplitPoint] = []
         var currentParts = 0
         var partIndicator = ""
         
-        while startIndex != endIndex {
+        while startPartIndex < endPartIndex {
+            let isEndOfText = (endPartIndex == text.endIndex)
             currentParts += 1
-            partIndicator = SplitPoint.partIndicator(currentPart: currentParts, totalPart: estimateParts)
-            let isChangeEndIndex = text.addPartIndicator(with: partIndicator, at: startIndex, endIndex: endIndex)
+            partIndicator = SplitPoint.partIndicator(currentParts, estimateParts)
+            text.addPartIndicator(with: partIndicator, at: startPartIndex)
             
-            if isChangeEndIndex {
-                let distance = text.distance(from: startIndex, to: endIndex) - maxLenght
+            if isEndOfText {
+                let distance = maxLenght - text.distance(from: startPartIndex, to: endPartIndex)
                 if distance > 0 {
-                    endIndex = text.moveBackward(currentIndex: endIndex, value: distance)
-                } else if distance < 0 {
-                    endIndex = text.endIndex
+                     endPartIndex = text.moveIndex(of: endPartIndex, by: distance)
                 }
             }
-            
-            if !text.isStopWord(index: endIndex) {
-                let minIndex = text.moveForward(currentIndex: startIndex, value: partIndicator.count + 1)
-                guard let stopWordIndex = text.findStopWord(from: endIndex, minIndex: minIndex) else {
+          
+            if !text.isStopWord(endPartIndex) {
+                let minIndex = text.moveIndex(of: startPartIndex, by: partIndicator.count)
+                guard let stopWordIndex = text.findStopWord(from: endPartIndex, minIndex: minIndex) else {
                     return nil
                 }
-                endIndex = stopWordIndex
+                endPartIndex = stopWordIndex
             }
             
-            let point = SplitPoint(startIndex, endIndex, currentParts)
+            let point = SplitPoint(startPartIndex, endPartIndex, currentParts)
             splitPoints.append(point)
-            startIndex = endIndex
-            endIndex = text.moveForward(currentIndex: endIndex, value: maxLenght)
+            startPartIndex = endPartIndex
+            endPartIndex = text.moveIndex(of: endPartIndex, by: maxLenght)
         }
         
         if currentParts == estimateParts {
@@ -109,10 +94,11 @@ public class Message {
     
     private static func mapMessages(from text: String, points: [SplitPoint], totalParts: Int)
         -> [Message] {
+            var splitText = ""
             var messages: [Message] = []
-            for (index, point) in points.enumerated() {
-                let splitText = String(text[point.startIndex..<point.endIndex])
-                messages.append(Message(text: splitText, currentPart: index, totalPart: totalParts))
+            for point in points {
+                splitText = String(text[point.startIndex..<point.endIndex])
+                messages.append(Message(text: splitText))
             }
             return messages
     }
@@ -121,8 +107,8 @@ public class Message {
         var output = string
         var partIndicator = ""
         for point in points {
-            partIndicator = SplitPoint.partIndicator(currentPart: point.currentPart, totalPart: totalPart)
-            let range = point.partIndicatorRange(in: string, partIndicator: partIndicator)
+            partIndicator = SplitPoint.partIndicator(point.currentPart, totalPart)
+            let range = point.partIndicatorRange(in: string, partIndicator)
             output.replaceSubrange(range, with: partIndicator)
         }
         return output

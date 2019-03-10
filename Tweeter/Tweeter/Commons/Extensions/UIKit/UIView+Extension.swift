@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     var frameWidth: CGFloat {
-        return frame.height
+        return frame.width
     }
     
     var frameHeight: CGFloat {
-        return frame.width
+        return frame.height
     }
 }
 

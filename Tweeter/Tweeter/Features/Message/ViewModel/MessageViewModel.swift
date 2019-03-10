@@ -25,7 +25,7 @@ class MessageViewModel {
     }
     
     var lastMessageIndexPath: IndexPath {
-        return IndexPath(row: numberMessages - 1, section: 0)
+        return IndexPath(row: max(numberMessages - 1, 0), section: 0)
     }
     
     init() {
@@ -58,9 +58,7 @@ extension MessageViewModel: InputMessageViewDelegate {
         guard let subMessages = Message.splitMessage(message) else {
             return
         }
-        subMessages.forEach {
-            messages.append($0)
-        }
+        messages += subMessages
         delegate?.updateLayoutSendMessageSuccess()
     }
     

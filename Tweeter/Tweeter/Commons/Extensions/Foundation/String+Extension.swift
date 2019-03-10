@@ -9,38 +9,34 @@
 import Foundation
 
 public extension String {
-    
-    func moveForward(currentIndex: Index, value: Int) -> Index {
-        if distance(from: currentIndex, to: endIndex) <= value {
-            return endIndex
+    func moveIndex(of currentIndex: Index, by value: Int) -> Index {
+        if value >= 0 {
+            if distance(from: currentIndex, to: endIndex) <= value {
+                return endIndex
+            }
+        } else {
+            if distance(from: startIndex, to: currentIndex) <= value {
+                return startIndex
+            }
         }
         return index(currentIndex, offsetBy: value)
     }
     
-    func moveBackward(currentIndex: Index, value: Int) -> Index {
-        if distance(from: startIndex, to: currentIndex) <= value {
-            return startIndex
-        }
-        return index(currentIndex, offsetBy: -value)
-    }
-    
-    mutating func addPartIndicator(with partIndicator: String, at index: Index, endIndex: Index) -> Bool {
-        let needMoveEndIndex = (endIndex == self.endIndex)
+    mutating func addPartIndicator(with partIndicator: String, at index: Index) {
         var indicator = partIndicator
-        
+
         if self[index] != " " {
             indicator += " "
         }
         insert(contentsOf: indicator, at: index)
-        return needMoveEndIndex
     }
     
-    func isStopWord(index: Index) -> Bool {
-        if index == endIndex {
+    func isStopWord(_ endPartIndex: Index) -> Bool {
+        if endPartIndex == endIndex {
             return true
         }
-        let nextIndex = moveForward(currentIndex: index, value: 1)
-        if self[nextIndex] == " " || self[index] == " " {
+        let previousIndex = moveIndex(of: endPartIndex, by: -1)
+        if self[previousIndex] == " " || self[endPartIndex] == " " || self[previousIndex] == "." {
             return true
         }
         return false
@@ -48,11 +44,11 @@ public extension String {
     
     func findStopWord(from index: Index, minIndex: Index) -> Index? {
         var currentIndex = index
-        while currentIndex >= minIndex {
+        while currentIndex > minIndex {
             if self[currentIndex] == " " {
                 return currentIndex
             }
-            currentIndex = moveBackward(currentIndex: currentIndex, value: 1)
+            currentIndex = moveIndex(of: currentIndex, by: -1)
         }
     
         return nil

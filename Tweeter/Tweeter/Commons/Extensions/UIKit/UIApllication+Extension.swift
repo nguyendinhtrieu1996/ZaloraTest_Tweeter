@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIApplication {
+public extension UIApplication {
     var bottomSafeAreaInsets: CGFloat {
         if #available(iOS 11, *) {
             let window = UIApplication.shared.keyWindow

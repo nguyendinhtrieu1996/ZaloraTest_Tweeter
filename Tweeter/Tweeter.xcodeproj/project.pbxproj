@@ -12,12 +12,16 @@
 		88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */; };
 		88C0496722324EB3005A4D25 /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */; };
 		88C04969223251BF005A4D25 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C04968223251BF005A4D25 /* Array+Extension.swift */; };
+		C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D1592234A6B40027CE0B /* CGSizeTests.swift */; };
+		C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15B2234A7D20027CE0B /* UIViewTests.swift */; };
+		C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */; };
+		C513D1602234AA490027CE0B /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15F2234AA490027CE0B /* ArrayTests.swift */; };
+		C513D1622234ABAC0027CE0B /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D1612234ABAC0027CE0B /* StringTests.swift */; };
 		C58E8F97223002230022B304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8F96223002230022B304 /* AppDelegate.swift */; };
 		C58E8F99223002230022B304 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8F98223002230022B304 /* MessageViewController.swift */; };
 		C58E8F9C223002230022B304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58E8F9A223002230022B304 /* Main.storyboard */; };
 		C58E8F9E223002230022B304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C58E8F9D223002230022B304 /* Assets.xcassets */; };
 		C58E8FA1223002230022B304 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58E8F9F223002230022B304 /* LaunchScreen.storyboard */; };
-		C58E8FAC223002230022B304 /* TweeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FAB223002230022B304 /* TweeterTests.swift */; };
 		C58E8FB7223002230022B304 /* TweeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FB6223002230022B304 /* TweeterUITests.swift */; };
 		C58E8FCC223002A50022B304 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FCB223002A50022B304 /* Message.swift */; };
 		C58E8FCE223002B10022B304 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58E8FCD223002B10022B304 /* MessageViewModel.swift */; };
@@ -62,6 +66,11 @@
 		88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
 		88C04968223251BF005A4D25 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		C513D1592234A6B40027CE0B /* CGSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
+		C513D15B2234A7D20027CE0B /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
+		C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsTests.swift; sourceTree = "<group>"; };
+		C513D15F2234AA490027CE0B /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		C513D1612234ABAC0027CE0B /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		C58E8F93223002230022B304 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58E8F96223002230022B304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58E8F98223002230022B304 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +79,6 @@
 		C58E8FA0223002230022B304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C58E8FA2223002230022B304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C58E8FA7223002230022B304 /* TweeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C58E8FAB223002230022B304 /* TweeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterTests.swift; sourceTree = "<group>"; };
 		C58E8FAD223002230022B304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C58E8FB2223002230022B304 /* TweeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58E8FB6223002230022B304 /* TweeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterUITests.swift; sourceTree = "<group>"; };
@@ -130,6 +138,18 @@
 			path = MessageCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		C513D1562234A68A0027CE0B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C513D1592234A6B40027CE0B /* CGSizeTests.swift */,
+				C513D15B2234A7D20027CE0B /* UIViewTests.swift */,
+				C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */,
+				C513D15F2234AA490027CE0B /* ArrayTests.swift */,
+				C513D1612234ABAC0027CE0B /* StringTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C58E8F8A223002230022B304 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +184,7 @@
 		C58E8FAA223002230022B304 /* TweeterTests */ = {
 			isa = PBXGroup;
 			children = (
-				C58E8FAB223002230022B304 /* TweeterTests.swift */,
+				C513D1562234A68A0027CE0B /* Extensions */,
 				C58E8FAD223002230022B304 /* Info.plist */,
 			);
 			path = TweeterTests;
@@ -417,6 +437,7 @@
 					};
 					C58E8FA6223002230022B304 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = C58E8F92223002230022B304;
 					};
 					C58E8FB1223002230022B304 = {
@@ -509,7 +530,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C58E8FAC223002230022B304 /* TweeterTests.swift in Sources */,
+				C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */,
+				C513D1622234ABAC0027CE0B /* StringTests.swift in Sources */,
+				C513D1602234AA490027CE0B /* ArrayTests.swift in Sources */,
+				C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */,
+				C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +740,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DAA47P5N57;
 				INFOPLIST_FILE = TweeterTests/Info.plist;
@@ -725,6 +751,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dinhtrieu.TweeterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tweeter.app/Tweeter";
@@ -736,6 +763,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DAA47P5N57;
 				INFOPLIST_FILE = TweeterTests/Info.plist;
