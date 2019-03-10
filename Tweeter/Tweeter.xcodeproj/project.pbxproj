@@ -13,6 +13,11 @@
 		88C0496722324EB3005A4D25 /* BaseUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */; };
 		88C04969223251BF005A4D25 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C04968223251BF005A4D25 /* Array+Extension.swift */; };
 		C51349C222353FF400A90B58 /* MessageCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */; };
+		C51349C42235461600A90B58 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C32235461600A90B58 /* MessageTests.swift */; };
+		C51349C62235466300A90B58 /* SplitPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C52235466300A90B58 /* SplitPointTests.swift */; };
+		C51349C82235534900A90B58 /* MessageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C72235534900A90B58 /* MessageViewControllerTests.swift */; };
+		C51349CA22355EC300A90B58 /* MockMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */; };
+		C51349CC2235600800A90B58 /* MockUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349CB2235600800A90B58 /* MockUICollectionView.swift */; };
 		C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D1592234A6B40027CE0B /* CGSizeTests.swift */; };
 		C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15B2234A7D20027CE0B /* UIViewTests.swift */; };
 		C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */; };
@@ -70,6 +75,11 @@
 		88C0496622324EB3005A4D25 /* BaseUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionView.swift; sourceTree = "<group>"; };
 		88C04968223251BF005A4D25 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModelTests.swift; sourceTree = "<group>"; };
+		C51349C32235461600A90B58 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		C51349C52235466300A90B58 /* SplitPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPointTests.swift; sourceTree = "<group>"; };
+		C51349C72235534900A90B58 /* MessageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerTests.swift; sourceTree = "<group>"; };
+		C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C51349CB2235600800A90B58 /* MockUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUICollectionView.swift; sourceTree = "<group>"; };
 		C513D1592234A6B40027CE0B /* CGSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
 		C513D15B2234A7D20027CE0B /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsTests.swift; sourceTree = "<group>"; };
@@ -378,6 +388,9 @@
 				C5B4121E2234EEA80057E683 /* Message */,
 				C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */,
 				C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */,
+				C51349C52235466300A90B58 /* SplitPointTests.swift */,
+				C51349C32235461600A90B58 /* MessageTests.swift */,
+				C51349C72235534900A90B58 /* MessageViewControllerTests.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -394,6 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */,
+				C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */,
+				C51349CB2235600800A90B58 /* MockUICollectionView.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -571,10 +586,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51349C82235534900A90B58 /* MessageViewControllerTests.swift in Sources */,
 				C5B412222234F93A0057E683 /* MockMessageViewModelDelegate.swift in Sources */,
+				C51349C62235466300A90B58 /* SplitPointTests.swift in Sources */,
 				C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */,
+				C51349CA22355EC300A90B58 /* MockMessageCollectionViewCell.swift in Sources */,
+				C51349CC2235600800A90B58 /* MockUICollectionView.swift in Sources */,
 				C513D1622234ABAC0027CE0B /* StringTests.swift in Sources */,
 				C5B412202234F32B0057E683 /* MessageViewModelTests.swift in Sources */,
+				C51349C42235461600A90B58 /* MessageTests.swift in Sources */,
 				C513D1602234AA490027CE0B /* ArrayTests.swift in Sources */,
 				C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */,
 				C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */,

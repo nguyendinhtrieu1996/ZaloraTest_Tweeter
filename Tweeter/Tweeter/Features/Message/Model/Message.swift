@@ -32,12 +32,16 @@ public struct SplitPoint {
 
 // MARK: -
 
-public class Message {
+public class Message : Equatable{
     private (set) var text = ""
     public static var maxLenght = 50
     
     init(text: String) {
         self.text = text
+    }
+    
+    public static func == (lhs: Message, rhs: Message) -> Bool {
+        return lhs.text == rhs.text
     }
 
     static func splitMessage(_ string: String, totalPart: Int? = nil) -> [Message]? {

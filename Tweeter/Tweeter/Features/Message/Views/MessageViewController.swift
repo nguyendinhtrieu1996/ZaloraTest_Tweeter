@@ -12,7 +12,7 @@ class MessageViewController: UIViewController {
     
     // MARK: Properties
     
-    fileprivate lazy var messageViewModel: MessageViewModel = {
+    lazy var messageViewModel: MessageViewModel = {
         let viewModel = MessageViewModel()
         viewModel.delegate = self
         return viewModel
@@ -20,8 +20,8 @@ class MessageViewController: UIViewController {
     
     // MARK: UI Elements
     
-    @IBOutlet fileprivate weak var messageCollectionView: UICollectionView?
-    @IBOutlet fileprivate weak var inputMessageView: InputMessageView?
+    @IBOutlet weak var messageCollectionView: UICollectionView?
+    @IBOutlet weak var inputMessageView: InputMessageView?
     
     // MARK: Constraints
     
@@ -47,7 +47,6 @@ class MessageViewController: UIViewController {
     private func setupMessageCollectionView() {
         messageCollectionView?.registerReusableCell(MessageCollectionViewCell.self)
         messageCollectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
-       
     }
     
     // MARK: Helper methods
