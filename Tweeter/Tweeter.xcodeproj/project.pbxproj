@@ -11,7 +11,6 @@
 		8887BCAD22361AD6008AB333 /* MockInputMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887BCAC22361AD6008AB333 /* MockInputMessageView.swift */; };
 		8887BCAF22361BB1008AB333 /* MockUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */; };
 		888B4ED122365514008991B7 /* TextTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B4ED022365514008991B7 /* TextTestCase.swift */; };
-		888B4ED322365772008991B7 /* SplitMessageTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B4ED222365772008991B7 /* SplitMessageTestCase.swift */; };
 		88C0496022324C82005A4D25 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */; };
 		88C0496422324E98005A4D25 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */; };
 		88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */; };
@@ -77,7 +76,6 @@
 		8887BCAC22361AD6008AB333 /* MockInputMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputMessageView.swift; sourceTree = "<group>"; };
 		8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUICollectionView.swift; sourceTree = "<group>"; };
 		888B4ED022365514008991B7 /* TextTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTestCase.swift; sourceTree = "<group>"; };
-		888B4ED222365772008991B7 /* SplitMessageTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessageTestCase.swift; sourceTree = "<group>"; };
 		88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -468,7 +466,6 @@
 				C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */,
 				8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */,
 				888B4ED022365514008991B7 /* TextTestCase.swift */,
-				888B4ED222365772008991B7 /* SplitMessageTestCase.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51349C82235534900A90B58 /* MessageViewControllerTests.swift in Sources */,
-				888B4ED322365772008991B7 /* SplitMessageTestCase.swift in Sources */,
 				C5B412222234F93A0057E683 /* MockMessageViewModelDelegate.swift in Sources */,
 				8887BCAB223618EB008AB333 /* MockMessageViewModel.swift in Sources */,
 				8887BCAD22361AD6008AB333 /* MockInputMessageView.swift in Sources */,

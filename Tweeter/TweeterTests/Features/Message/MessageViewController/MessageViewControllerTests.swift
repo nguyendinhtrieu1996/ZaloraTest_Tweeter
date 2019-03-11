@@ -77,7 +77,7 @@ extension MessageViewControllerTests {
         NotificationCenter.default.post(name: UIResponder.keyboardWillChangeFrameNotification,
                                         object: nil,
                                         userInfo: nil)
-        XCTAssertTrue(mockViewModel.wasCallKeyboardChangeFrame)
+        XCTAssertTrue(mockViewModel.wasCalledKeyboardChangeFrame)
     }
 }
 

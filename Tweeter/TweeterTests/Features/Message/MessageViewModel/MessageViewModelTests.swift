@@ -71,13 +71,57 @@ extension MessageViewModelTests {
     }
 }
 
-// MARK: - Tests InputMessageViewDelegate
+// MARK: - Tests didSelectSendButton
 
 extension MessageViewModelTests {
     func testDidSelectSendButton_WhenCanNotSplitMessage_ShowError() {
         let mockDelegate = MockMessageViewModelDelegate()
         sut.delegate = mockDelegate
-        sut.didSelectSendButton(with: TextTestCase.textGreate50CharacterDoNotContainWhiteSpace)
+        sut.didSelectSendButton(with: TextTestCase.textOver50CharacterDoNotContainWhiteSpace)
         XCTAssertTrue(mockDelegate.wasCalledShowError)
+    }
+    
+    func testDidSelectSendButon_InCreaseNumberOfMessage() {
+        let currentMessages = sut.numberMessages
+        let text = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
+        sut.didSelectSendButton(with: text)
+        let expectedMessages = currentMessages + Message.splitMessage(text)!.count
+        XCTAssertEqual(sut.numberMessages, expectedMessages)
+    }
+    
+    func testDidSelectSendButton_WhenSplitMessage_CallUpdateLayout() {
+        let mockDelegate = MockMessageViewModelDelegate()
+        sut.delegate = mockDelegate
+        let text = "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself."
+        sut.didSelectSendButton(with: text)
+        XCTAssertTrue(mockDelegate.wasCalledUpdateLayoutSendMessageSuccess)
+    }
+}
+
+// MARK: - inputTextValueChange
+
+extension MessageViewModelTests {
+    func testInputTextValueChange_WhenTextEqualNil_CallUpdateButtonAndDisable() {
+        let mockDelegate = MockMessageViewModelDelegate()
+        sut.delegate = mockDelegate
+        sut.inputTextValueChange(with: nil)
+        XCTAssertTrue(mockDelegate.wasCallUpdateButtonState)
+        XCTAssertFalse(mockDelegate.isEnableButton!)
+    }
+    
+    func testInputTextValueChange_WhenTextEqualEmpty_CallUpdateButtonAndDisable() {
+        let mockDelegate = MockMessageViewModelDelegate()
+        sut.delegate = mockDelegate
+        sut.inputTextValueChange(with: "")
+        XCTAssertTrue(mockDelegate.wasCallUpdateButtonState)
+        XCTAssertFalse(mockDelegate.isEnableButton!)
+    }
+    
+    func testInputTextValueChange_WhenValidText_CallUpdateButtonStateAndEnable() {
+        let mockDelegate = MockMessageViewModelDelegate()
+        sut.delegate = mockDelegate
+        sut.inputTextValueChange(with: "I can't believe Tweeter now supports chunking my messages, so I don't have to do it myself.")
+        XCTAssertTrue(mockDelegate.wasCallUpdateButtonState)
+        XCTAssertTrue(mockDelegate.isEnableButton!)
     }
 }

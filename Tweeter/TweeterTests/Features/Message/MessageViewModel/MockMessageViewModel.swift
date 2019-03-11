@@ -10,10 +10,16 @@ import Foundation
 @testable import Tweeter
 
 class MockMessageViewModel: MessageViewModel {
-    var wasCallKeyboardChangeFrame = false
+    var wasCalledKeyboardChangeFrame = false
+    var wasCalledViewModelForCell = false
     
     override func keyBoardChangeFrame(_ notification: NSNotification) {
-        wasCallKeyboardChangeFrame = true
+        wasCalledKeyboardChangeFrame = true
         super.keyBoardChangeFrame(notification)
+    }
+    
+    override func viewModelForCell(at index: Int) -> MessageCellViewModel? {
+        wasCalledViewModelForCell = true
+        return super.viewModelForCell(at: index)
     }
 }

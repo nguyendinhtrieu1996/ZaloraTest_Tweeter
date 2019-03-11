@@ -109,7 +109,9 @@ extension MessageViewController: MessageViewModelDelegate {
     
     func updateLayoutSendMessageSuccess() {
         messageCollectionView?.reloadData()
-        messageCollectionView?.scrollToItem(at: messageViewModel.lastMessageIndexPath, at: .bottom, animated: true)
+        messageCollectionView?.scrollToItem(at: messageViewModel.lastMessageIndexPath,
+                                            at: .bottom,
+                                            animated: true)
         inputMessageView?.clearInputText()
         inputMessageView?.updateSendButtonState(isEnable: false)
     }
