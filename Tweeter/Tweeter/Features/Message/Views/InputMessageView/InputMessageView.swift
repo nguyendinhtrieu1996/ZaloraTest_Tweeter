@@ -21,9 +21,9 @@ class InputMessageView: BaseXibView, Reusable {
     
     // MARK: UI Elements
     
-    @IBOutlet private weak var containerView: InputMessageView?
-    @IBOutlet private weak var inputMessageTextView: UITextView?
-    @IBOutlet private weak var sendButton: UIButton?
+    @IBOutlet weak var containerView: InputMessageView?
+    @IBOutlet weak var inputMessageTextView: UITextView?
+    @IBOutlet weak var sendButton: UIButton?
     
     // MARK: Lifecycle
     

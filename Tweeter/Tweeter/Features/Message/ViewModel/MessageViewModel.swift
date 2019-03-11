@@ -12,11 +12,12 @@ protocol MessageViewModelDelegate: class {
     func updateMessageViewBottomConstraint(with keyboardInfo: KeyboardAnimationInfo)
     func updateSendButtonState(isEnable: Bool)
     func updateLayoutSendMessageSuccess()
+    func showError(_ message: String)
 }
 
 // MARK: -
 
-class MessageViewModel {
+open class MessageViewModel {
     fileprivate var messages: [Message] = []
     weak var delegate: MessageViewModelDelegate?
     
@@ -56,6 +57,7 @@ class MessageViewModel {
 extension MessageViewModel: InputMessageViewDelegate {
     func didSelectSendButton(with message: String) {
         guard let subMessages = Message.splitMessage(message) else {
+            delegate?.showError("")
             return
         }
         messages += subMessages

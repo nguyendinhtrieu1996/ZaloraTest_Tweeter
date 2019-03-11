@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8887BCAB223618EB008AB333 /* MockMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887BCAA223618EB008AB333 /* MockMessageViewModel.swift */; };
+		8887BCAD22361AD6008AB333 /* MockInputMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887BCAC22361AD6008AB333 /* MockInputMessageView.swift */; };
+		8887BCAF22361BB1008AB333 /* MockUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */; };
+		888B4ED122365514008991B7 /* TextTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B4ED022365514008991B7 /* TextTestCase.swift */; };
+		888B4ED322365772008991B7 /* SplitMessageTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B4ED222365772008991B7 /* SplitMessageTestCase.swift */; };
 		88C0496022324C82005A4D25 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */; };
 		88C0496422324E98005A4D25 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */; };
 		88C0496522324E98005A4D25 /* MessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */; };
@@ -17,7 +22,6 @@
 		C51349C62235466300A90B58 /* SplitPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C52235466300A90B58 /* SplitPointTests.swift */; };
 		C51349C82235534900A90B58 /* MessageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C72235534900A90B58 /* MessageViewControllerTests.swift */; };
 		C51349CA22355EC300A90B58 /* MockMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */; };
-		C51349CC2235600800A90B58 /* MockUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51349CB2235600800A90B58 /* MockUICollectionView.swift */; };
 		C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D1592234A6B40027CE0B /* CGSizeTests.swift */; };
 		C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15B2234A7D20027CE0B /* UIViewTests.swift */; };
 		C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */; };
@@ -69,6 +73,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8887BCAA223618EB008AB333 /* MockMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageViewModel.swift; sourceTree = "<group>"; };
+		8887BCAC22361AD6008AB333 /* MockInputMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInputMessageView.swift; sourceTree = "<group>"; };
+		8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUICollectionView.swift; sourceTree = "<group>"; };
+		888B4ED022365514008991B7 /* TextTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTestCase.swift; sourceTree = "<group>"; };
+		888B4ED222365772008991B7 /* SplitMessageTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMessageTestCase.swift; sourceTree = "<group>"; };
 		88C0495F22324C82005A4D25 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		88C0496222324E98005A4D25 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		88C0496322324E98005A4D25 /* MessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -79,7 +88,6 @@
 		C51349C52235466300A90B58 /* SplitPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitPointTests.swift; sourceTree = "<group>"; };
 		C51349C72235534900A90B58 /* MessageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewControllerTests.swift; sourceTree = "<group>"; };
 		C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessageCollectionViewCell.swift; sourceTree = "<group>"; };
-		C51349CB2235600800A90B58 /* MockUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUICollectionView.swift; sourceTree = "<group>"; };
 		C513D1592234A6B40027CE0B /* CGSizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
 		C513D15B2234A7D20027CE0B /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		C513D15D2234A9440027CE0B /* UIEdgeInsetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsTests.swift; sourceTree = "<group>"; };
@@ -144,6 +152,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		888B4ECA223641C4008991B7 /* MessageViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */,
+				8887BCAA223618EB008AB333 /* MockMessageViewModel.swift */,
+				C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */,
+			);
+			path = MessageViewModel;
+			sourceTree = "<group>";
+		};
+		888B4ECB2236424E008991B7 /* InputMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				8887BCAC22361AD6008AB333 /* MockInputMessageView.swift */,
+			);
+			path = InputMessageView;
+			sourceTree = "<group>";
+		};
+		888B4ECC22364271008991B7 /* MessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C51349C72235534900A90B58 /* MessageViewControllerTests.swift */,
+			);
+			path = MessageViewController;
+			sourceTree = "<group>";
+		};
+		888B4ECD22364285008991B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C51349C52235466300A90B58 /* SplitPointTests.swift */,
+				C51349C32235461600A90B58 /* MessageTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		888B4ECE22364290008991B7 /* MessageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */,
+			);
+			path = MessageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		888B4ECF223642A4008991B7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C58E8F98223002230022B304 /* MessageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		88C0496122324E78005A4D25 /* MessageCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +350,7 @@
 				C5B0D2892231740800841224 /* TextBubbleView */,
 				C58E8FEA223009C40022B304 /* InputMessageView */,
 				88C0496122324E78005A4D25 /* MessageCollectionViewCell */,
-				C58E8F98223002230022B304 /* MessageViewController.swift */,
+				888B4ECF223642A4008991B7 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,11 +445,6 @@
 			isa = PBXGroup;
 			children = (
 				C5B4121E2234EEA80057E683 /* Message */,
-				C5B4121F2234F32B0057E683 /* MessageViewModelTests.swift */,
-				C51349C122353FF400A90B58 /* MessageCellViewModelTests.swift */,
-				C51349C52235466300A90B58 /* SplitPointTests.swift */,
-				C51349C32235461600A90B58 /* MessageTests.swift */,
-				C51349C72235534900A90B58 /* MessageViewControllerTests.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -398,19 +452,25 @@
 		C5B4121E2234EEA80057E683 /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				C5B412232234F9970057E683 /* Mock */,
+				C5B412232234F9970057E683 /* Mocks */,
+				888B4ECC22364271008991B7 /* MessageViewController */,
+				888B4ECA223641C4008991B7 /* MessageViewModel */,
+				888B4ECB2236424E008991B7 /* InputMessageView */,
+				888B4ECD22364285008991B7 /* Models */,
+				888B4ECE22364290008991B7 /* MessageCollectionViewCell */,
 			);
 			path = Message;
 			sourceTree = "<group>";
 		};
-		C5B412232234F9970057E683 /* Mock */ = {
+		C5B412232234F9970057E683 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				C5B412212234F93A0057E683 /* MockMessageViewModelDelegate.swift */,
 				C51349C922355EC300A90B58 /* MockMessageCollectionViewCell.swift */,
-				C51349CB2235600800A90B58 /* MockUICollectionView.swift */,
+				8887BCAE22361BB1008AB333 /* MockUICollectionView.swift */,
+				888B4ED022365514008991B7 /* TextTestCase.swift */,
+				888B4ED222365772008991B7 /* SplitMessageTestCase.swift */,
 			);
-			path = Mock;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		C5B412272234FC300057E683 /* Supports */ = {
@@ -587,17 +647,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C51349C82235534900A90B58 /* MessageViewControllerTests.swift in Sources */,
+				888B4ED322365772008991B7 /* SplitMessageTestCase.swift in Sources */,
 				C5B412222234F93A0057E683 /* MockMessageViewModelDelegate.swift in Sources */,
+				8887BCAB223618EB008AB333 /* MockMessageViewModel.swift in Sources */,
+				8887BCAD22361AD6008AB333 /* MockInputMessageView.swift in Sources */,
 				C51349C62235466300A90B58 /* SplitPointTests.swift in Sources */,
 				C513D15E2234A9440027CE0B /* UIEdgeInsetsTests.swift in Sources */,
 				C51349CA22355EC300A90B58 /* MockMessageCollectionViewCell.swift in Sources */,
-				C51349CC2235600800A90B58 /* MockUICollectionView.swift in Sources */,
 				C513D1622234ABAC0027CE0B /* StringTests.swift in Sources */,
 				C5B412202234F32B0057E683 /* MessageViewModelTests.swift in Sources */,
 				C51349C42235461600A90B58 /* MessageTests.swift in Sources */,
 				C513D1602234AA490027CE0B /* ArrayTests.swift in Sources */,
 				C513D15C2234A7D20027CE0B /* UIViewTests.swift in Sources */,
+				8887BCAF22361BB1008AB333 /* MockUICollectionView.swift in Sources */,
 				C513D15A2234A6B40027CE0B /* CGSizeTests.swift in Sources */,
+				888B4ED122365514008991B7 /* TextTestCase.swift in Sources */,
 				C51349C222353FF400A90B58 /* MessageCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

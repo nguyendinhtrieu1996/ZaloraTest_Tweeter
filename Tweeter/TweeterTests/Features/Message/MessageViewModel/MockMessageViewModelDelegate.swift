@@ -11,17 +11,20 @@ import XCTest
 
 class MockMessageViewModelDelegate: MessageViewModelDelegate {
     var wasCalledUpdateBottomConst = false
+    var wasCalledShowError = false
     
     func updateMessageViewBottomConstraint(with keyboardInfo: KeyboardAnimationInfo) {
         wasCalledUpdateBottomConst = true
     }
     
     func updateSendButtonState(isEnable: Bool) {
-        
     }
     
     func updateLayoutSendMessageSuccess() {
-        
+    }
+    
+    func showError(_ message: String) {
+        wasCalledShowError = true
     }
     
 }

@@ -25,8 +25,8 @@ class MessageViewController: UIViewController {
     
     // MARK: Constraints
     
-    @IBOutlet fileprivate weak var inputMessageViewHeightConst: NSLayoutConstraint?
-    @IBOutlet fileprivate weak var inputMessageViewBottomConst: NSLayoutConstraint?
+    @IBOutlet weak var inputMessageViewHeightConst: NSLayoutConstraint?
+    @IBOutlet weak var inputMessageViewBottomConst: NSLayoutConstraint?
     
     // MARK: Lifecycle
     
@@ -103,11 +103,15 @@ extension MessageViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - MessageViewModelDelegate
 
 extension MessageViewController: MessageViewModelDelegate {
+    func showError(_ message: String) {
+        
+    }
+    
     func updateLayoutSendMessageSuccess() {
         messageCollectionView?.reloadData()
         messageCollectionView?.scrollToItem(at: messageViewModel.lastMessageIndexPath, at: .bottom, animated: true)
         inputMessageView?.clearInputText()
-        updateSendButtonState(isEnable: false)
+        inputMessageView?.updateSendButtonState(isEnable: false)
     }
     
     func updateSendButtonState(isEnable: Bool) {

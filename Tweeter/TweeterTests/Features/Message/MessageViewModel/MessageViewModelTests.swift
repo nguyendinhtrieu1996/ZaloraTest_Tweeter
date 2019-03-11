@@ -26,36 +26,58 @@ class MessageViewModelTests: XCTestCase {
     override func tearDown() {
     }
     
-    func testNumberOfMessages() {
+}
+
+// MARK: - Tests Properties
+
+extension MessageViewModelTests {
+    func testNumberOfMessages_EqualMessagesCount() {
         XCTAssertEqual(sut.numberMessages, messages.count)
     }
     
     func testLastMessageIndexpath() {
-        let expectIndexPath = IndexPath(row: messages.count - 1, section: 0)
-        XCTAssertEqual(sut.lastMessageIndexPath, expectIndexPath)
+        let expectedIndexPath = IndexPath(row: messages.count - 1, section: 0)
+        XCTAssertEqual(sut.lastMessageIndexPath, expectedIndexPath)
     }
-    
-    func testViewModelForCellOfOfIndexReturnNil() {
+}
+
+// MARK: - Tests viewModelForCell
+
+extension MessageViewModelTests {
+    func testViewModelForCell_WhenIndexOutOfRange_ReturnNil() {
         XCTAssertNil(sut.viewModelForCell(at: messages.count))
     }
     
-    func testViewModelForCellReturnCellViewModel() {
+    func testViewModelForCell_ReturnCellViewModelNotNill() {
         XCTAssertNotNil(sut.viewModelForCell(at: 0))
     }
-    
-    func testKeyboardChangeFrameDoNotCellDelegate() {
+}
+
+// MARK: - Tests keyboardChangeFrame
+
+extension MessageViewModelTests {
+    func testKeyboardChangeFrame_WhenUserInfoIsNil_DoNotCallDelegate() {
         let delegate = MockMessageViewModelDelegate()
         sut.delegate = delegate
         sut.keyBoardChangeFrame(NSNotification(name: NSNotification.Name(rawValue: ""), object: nil))
         XCTAssertFalse(delegate.wasCalledUpdateBottomConst)
     }
     
-    func testKeyBoardChangeFrameCallDelegateUpdateConst() {
+    func testKeyBoardChangeFrame_CallDelegateUpdateConst() {
         let delegate = MockMessageViewModelDelegate()
         sut.delegate = delegate
         sut.keyBoardChangeFrame(fakeNSNotification)
         XCTAssertTrue(delegate.wasCalledUpdateBottomConst)
     }
-    
 }
 
+// MARK: - Tests InputMessageViewDelegate
+
+extension MessageViewModelTests {
+    func testDidSelectSendButton_WhenCanNotSplitMessage_ShowError() {
+        let mockDelegate = MockMessageViewModelDelegate()
+        sut.delegate = mockDelegate
+        sut.didSelectSendButton(with: TextTestCase.textGreate50CharacterDoNotContainWhiteSpace)
+        XCTAssertTrue(mockDelegate.wasCalledShowError)
+    }
+}
