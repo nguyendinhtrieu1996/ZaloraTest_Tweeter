@@ -104,7 +104,14 @@ extension MessageViewController: UICollectionViewDelegateFlowLayout {
 
 extension MessageViewController: MessageViewModelDelegate {
     func showError(_ message: String) {
-        
+        let alert = UIAlertController(title: "Tin nhắn không hợp lệ",
+                                      message: "Dường như bạn đã nhập hơn 50 kí tự liên tiếp không có khoảng trắng. Kiểm tra và thử lại!",
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func updateLayoutSendMessageSuccess() {
